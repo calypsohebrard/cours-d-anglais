@@ -1,5 +1,5 @@
 :root {
-    --primary: #9cc4ff;
+    --primary: #3f5981;
     --secondary: #3498db;
     --accent: #e74c3c;
     --light: #ecf0f1;
@@ -251,7 +251,7 @@ header {
 /* Section Langues */
 .languages {
     padding: 5rem 2rem;
-    background-color: var(--light);
+    background-color: white;
     width: 100%;
 }
 
@@ -349,15 +349,20 @@ header {
 
 /* Section Cours Immersifs */
 .immersive-courses {
-    background-color: #000;
+    background-color: var(--dark);
     padding: 5rem 0;
     position: relative;
     overflow: hidden;
     width: 100%;
+   
 }
+/*.slide-info--text span {
+    color: var(--english);
+} */
+
 
 .immersive-courses .section-title h2 {
-    color: white;
+     color: var(--primary);
     margin-bottom: 3rem;
 }
 
@@ -496,7 +501,7 @@ header {
     top: 50%;
     left: 50%;
     object-fit: cover;
-    transform: translate(-50%, -50%) scale(1.25)
+    transform: translate(-50%, -50%) scale(1.0);
         translate3d(var(--bgPosX), var(--bgPosY), 0);
     transition: filter var(--slide-transition-duration)
         var(--slide-transition-easing);
@@ -853,6 +858,9 @@ footer {
         left: -5%;
         bottom: 10%;
     }
+    .slide-info--text span {
+        font-size: 13px;
+    } 
 }
 
 @media (max-width: 576px) {
