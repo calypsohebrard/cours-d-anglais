@@ -1,40 +1,42 @@
-const userInput = document.getElementById("user-input");
-const checkBtn = document.getElementById("check-btn");
-const clearBtn = document.getElementById("clear-btn");
-const resultText = document.getElementById("results-div");
+        // CAROUSEL DES SUPER-HÉROS - Style CodePen
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+        const itemWidth = items[0].offsetWidth + 30; // 30px pour les marges
 
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
 
+        function nextSlide() {
+            const maxIndex = items.length - 1;
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Retour au début
+            }
+            updateCarousel();
+        }
 
-const checkRegex = /^1?\s?(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/;
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = items.length - 1; // Aller à la fin
+            }
+            updateCarousel();
+        }
 
-const validPhoneNumber = number => checkRegex.test(number);
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
 
-const isError = number => {
-  if(userInput.value === "") {
-    alert("Please provide a phone number");
-    return true;
-  } if(!validPhoneNumber(number)) {
-    resultText.innerText = `Invalid US number: ${number}`;
-    return true;
-  }
-  return false;
-}
+        // Défilement automatique
+        setInterval(nextSlide, 4000);
 
-checkBtn.addEventListener("click", () => {
-  const numberToCheck = userInput.value;
-  if(!isError(numberToCheck)) {
-     resultText.innerText = `Valid US number: ${numberToCheck}`;
-  } 
-   userInput.value = "";
-})
-
-clearBtn.addEventListener("click", () => {
-  resultText.innerText = "";
-})
-
-userInput.addEventListener("keypress", (e) => {
-  if(e.key === "Enter") {
-    e.preventDefault();
-    checkBtn.click();
-  }
-})
+        // Adaptation au redimensionnement
+        window.addEventListener('resize', () => {
+            itemWidth = items[0].offsetWidth + 30;
+            updateCarousel();
+        });
