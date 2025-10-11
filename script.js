@@ -104,6 +104,7 @@ if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+<<<<<<< HEAD
 }
 
 // Changement de style du header au scroll
@@ -127,6 +128,49 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 
 
+=======
+}
+
+// Changement de style du header au scroll
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+    }
+});
+
+// Fermer le menu mobile en cliquant sur un lien
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// Gestion du formulaire de contact
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Récupération des valeurs du formulaire
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const language = document.getElementById('language').value;
+        const message = document.getElementById('message').value;
+        
+        // Ici, on pourrait envoyer les données à un serveur
+        // Pour l'exemple, on affiche simplement une alerte
+        alert(`Merci ${name} ! Votre message a été envoyé. Nous vous contacterons bientôt à ${email} concernant nos cours de ${language}.`);
+        
+        // Réinitialisation du formulaire
+        contactForm.reset();
+    });
+}
+
+>>>>>>> bc36e40e39589bb24a61e2353bc04048daf85318
 // Animation au défilement
 const observerOptions = {
     threshold: 0.1,
