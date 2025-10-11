@@ -1,4 +1,4 @@
-<!DOCTYPE html>c
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +36,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Devenez bilingue sans stress, avec une méthode qui vous ressemble</h1>
-            <p>Des cours personnalisés adaptés à vos objectif, en présentiel ou à distance</p>
+            <p>Des cours personnalisés adaptés à vos objectifs, en présentiel ou à distance</p>
             <a href="#contact" class="btn">Commencer maintenant</a>
         </div>
     </section>
@@ -49,11 +49,9 @@
         <div class="about-content">
             <div class="about-text">
                 <p><strong>Passionnée par les langues depuis toujours</strong>, j'ai décidé de transformer ma passion en vocation. Avec un niveau B2 au TOEIC, je me spécialise dans l'apprentissage de l'anglais pratique et utile.</p>
-                <p>L'apprentissage d'une langue doit être une expérience enrichissante et agréable. C'est pourquoi je propose un apprentissage personnalisé selon vos besoins mais aussi vos <strong>centres d'intérêt</strong>.</strong></p>
+                <p>L'apprentissage d'une langue doit être une expérience enrichissante et agréable. C'est pourquoi je propose un apprentissage personnalisé selon vos besoins mais aussi vos <strong>centres d'intérêt</strong>.</p>
                 <p><strong>Le secret pour progresser en anglais ? La régularité et la bienveillance.</strong> C'est la philosophie que j'applique dans tous mes cours.</p>
-
                 <p>Que vous soyez fan de comics, de séries anglophones ou que souhaitiez échanger avec de nouvelles connaissances, il y aura toujours une méthode faite pour vous.</p>
-            
                 <a href="#languages" class="btn">Découvrir nos cours</a>
             </div>
             <div class="about-image">
@@ -98,20 +96,20 @@
         </div>
     </section>
 
-   <!-- Section Cours Immersifs -->
+   <!-- Section Cours Immersifs CORRIGÉE -->
 <section class="immersive-courses" id="immersive-courses">
     <div class="section-title">
         <h2>Nos Cours Immersifs</h2>
     </div>
     <div class="slider">
-        <button class="slider--btn slider--btn__prev">
+        <button class="slider--btn slider--btn__prev" id="prevBtn">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m15 18-6-6 6-6" />
             </svg>
         </button>
 
         <div class="slides__wrapper">
-            <div class="slides">
+            <div class="slides" id="carousel">
                 <!-- slide 1 - Anglais -->
                 <div class="slide" data-current>
                     <div class="slide__inner">
@@ -120,7 +118,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide__bg" style="--dir: 0" data-current></div>
 
                 <!-- slide 2 - Super héros -->
                 <div class="slide" data-next>
@@ -130,18 +127,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide__bg" style=" --dir: 1" data-next></div>
 
                 <!-- slide 3 - Préparation examens -->
                 <div class="slide" data-previous>
                     <div class="slide__inner">
                         <div class="slide--image__wrapper">
-                            <img class="slide--image" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Préparation aux examens" />
+                            <img class="slide--image" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&h=1500&q=80" alt="Préparation aux examens" />
                         </div>
                     </div>
                 </div>
-                <div class="slide__bg" style=" --dir: -1" data-previous></div>
             </div>
+
+            <!-- Backgrounds pour chaque slide -->
+            <div class="slide__bg" style="--bg: url(https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80)" data-current></div>
+            <div class="slide__bg" style="--bg: url(assets/superhero/comicstore.png)" data-next></div>
+            <div class="slide__bg" style="--bg: url(https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80)" data-previous></div>
+
             <div class="slides--infos">
                 <!-- Slide Info 1 - Anglais -->
                 <div class="slide-info" data-current>
@@ -171,7 +172,6 @@
                                 <span>Compréhension orale épique</span>
                             </div>
                             <div data-description class="slide-info--text">
-                                
                                 <span>Revivez les répliques de vos super héros préférés</span>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                 <span>TOEIC</span>
                             </div>
                             <div data-description class="slide-info--text">
-                                <span>Préparez-vous à l'examen avec des exercices</span>
+                                <span>Préparez-vous au TOEIC avec des exercices conformes à ceux de l'examen</span>
                             </div>
                         </div>
                     </div>
@@ -197,16 +197,13 @@
             </div>
         </div>
 
-        <button class="slider--btn slider--btn__next">
+        <button class="slider--btn slider--btn__next" id="nextBtn">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m9 18 6-6-6-6" />
             </svg>
         </button>
     </div>
 </section>
-
-
-
 
     <!-- Section Méthodes -->
     <section class="methods" id="methods">
@@ -254,7 +251,6 @@
             <div class="contact-info">
                 <h3>Informations de Contact</h3>
                 <div class="contact-details">
-
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
                         <p>calypso.hebrard@laposte.net</p>
@@ -264,23 +260,28 @@
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/englishwithcalypso/" class="social-link"><i class="fab fa-instagram"></i></a>
-                   
                 </div>
             </div>
             <div class="contact-form">
                 <h3>Envoyez-nous un message</h3>
-                <form id="contactForm">
+                <form id="contactForm" action="https://formsubmit.co/calypso.hebrard@laposte.net" method="POST">
+                    <!-- Champs cachés pour FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nouveau message - EnglishWithCalypso">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://votresite.com/merci.html">
+                    
                     <div class="form-group">
                         <label for="name">Nom complet</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input type="text" id="name" name="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Adresse email</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="language">Langue d'intérêt</label>
-                        <select id="language" class="form-control" required>
+                        <select id="language" name="language" class="form-control" required>
                             <option value="">Sélectionnez une langue</option>
                             <option value="english">Anglais</option>
                             <option value="russian">Russe</option>
@@ -289,7 +290,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn" style="width: 100%;">Envoyer le message</button>
                 </form>
@@ -310,6 +311,8 @@
                 <a href="#languages">Langues</a>
                 <a href="#methods">Méthodes</a>
                 <a href="#contact">Contact</a>
+                <a href="./pages/mentions-légales.html">Mentions légales</a>
+                <a href="./pages/politique-confidentialité.html">Politique de confidentialité</a>
             </div>
             <div class="copyright">
                 &copy; 2023 LinguaPro. Tous droits réservés.
@@ -317,8 +320,6 @@
         </div>
     </footer>
 
-  
-  <script src="script.js"></script>
-   
+    <script src="script.js"></script>
 </body>
 </html>
